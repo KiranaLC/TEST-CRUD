@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import Product from "../interface/product";
 import useProductStore from "../utils/store";
@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 
 const itemsPerPage = 16;
 
-export default function Home() {
+function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isModifyDialogOpen, setIsModifyDialogOpen] = useState(false);
@@ -150,4 +150,12 @@ export default function Home() {
       />
     </div>
   );
+}
+
+export default function HomeContent(){
+  return(
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home/>
+    </Suspense>
+  )
 }
