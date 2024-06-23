@@ -114,21 +114,23 @@ function Home() {
         {currentProducts}
       </div>
       <div className="flex justify-center bottom-0 left-0 right-0 py-4">
-        <button
+        {currentPage!=1&&<button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           className="px-4 py-2 mx-2 bg-gray-950 text-white rounded hover:bg-gray-800 transition-colors disabled:opacity-50"
-          disabled={currentPage === 1}
+          // disabled={currentPage === 1}
         >
           Previous
         </button>
+        }
         <span className="px-4 py-2">{`Page ${currentPage} of ${totalPages}`}</span>
-        <button
+        {currentPage!=totalPages&&<button
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           className="px-4 py-2 mx-2 bg-gray-950 text-white rounded hover:bg-gray-800 transition-colors disabled:opacity-50"
-          disabled={currentPage === totalPages}
+          // disabled={currentPage === totalPages}
         >
           Next
         </button>
+        }
       </div>
 
       <ProductDialog

@@ -40,22 +40,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
               />
             </Inset>
           </div>
-          <div className="p-2 overflow-hidden h-[calc(100%-140px)]">
-            <Text as="p" size="2" className="text-md lg:text-lg font-bold leading-tight">
+          <div className="pr-1 pl-1 lg:p-2 overflow-hidden h-[calc(100%-140px)]">
+            <Text as="p" size="1" className="text-sm lg:text-lg font-bold lg:leading-[1.4]">
               {name}
             </Text>
-            <Text as="p" size="1" className="text-md text-gray-500">
+            <Text as="p" size="1" className="text-sm lg:mt-[2px] lg:text-md text-gray-500">
               ${price}
             </Text>
-            <div className="hidden sm:block">
+            <div className="sm:block overflow-hidden">
               <Text
                 as="p"
                 size="1"
-                className=" hidden sm:block text-sm mt-1 overflow-hidden text-ellipsis"
+                className="sm:block text-sm mt-1 overflow-hidden text-ellipsis line-clamp-2 lg:line-clamp-3"
                 style={{
-                  display: "-webkit-box",
-                  WebkitLineClamp: 3, // Limit to 3 lines
-                  WebkitBoxOrient: "vertical",
+                  lineHeight: "1.2em" // Adjust line spacing
                 }}
               >
                 {description}
@@ -99,7 +97,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
 };
 
 export default ProductCard;
-
-
-
 
