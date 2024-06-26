@@ -64,9 +64,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </Box>
       <Popover.Root>
         <Popover.Trigger asChild>
-          <div className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer opacity-0 transition-opacity group-hover:opacity-100">
+          <button
+            className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer opacity-0 transition-opacity group-hover:opacity-100"
+            aria-label="Options"
+          >
             <DotsThreeVertical size={24} className="text-black" />
-          </div>
+          </button>
         </Popover.Trigger>
         <Popover.Portal>
           <Popover.Content className="bg-white shadow-lg rounded p-2">
@@ -97,4 +100,3 @@ const ProductCard: React.FC<ProductCardProps> = ({
 };
 
 export default ProductCard;
-

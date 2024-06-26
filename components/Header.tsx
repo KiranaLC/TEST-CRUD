@@ -27,7 +27,10 @@ const Header = () => {
         />
       </div>
       <div className="relative">
-        <button className="bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center">
+        <button
+          className="bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center"
+          aria-label="Menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -50,4 +53,3 @@ const Header = () => {
 };
 
 export default Header;
-
